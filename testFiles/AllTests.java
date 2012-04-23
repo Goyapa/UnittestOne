@@ -14,7 +14,7 @@ public class AllTests {
 	TestSuite suite = new TestSuite();
 	suite.addTestSuite(CustomerTest.class);
 	suite.addTestSuite(EuroTest.class);
-//	suite.addTestSuite(MovieTest.class);
+	suite.addTestSuite(MovieTest.class);
 //	suite.addTestSuite(RegularPriceTest.class);
 	return  suite;
   }
