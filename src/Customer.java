@@ -6,16 +6,14 @@
  * Packagename: PACKAGE_NAME
  * To change this template use File | Settings | File Templates.
  */
-public class Customer{
+public class Customer {
 
   private double totalCharge = 0;
 
   public void rentMovie(int daysRented) {
-	totalCharge += 2;
-	if (daysRented > 2){
-	  totalCharge += 1.75;
+	totalCharge += Movie.getCharge(daysRented);
 	}
-  }
+
 
   public double getTotalCharge() {
 	return totalCharge;
