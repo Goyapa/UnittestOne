@@ -19,12 +19,31 @@ public class EuroTest extends TestCase {
 
   public void testRounding() {
 	Euro rounded = new Euro(1.995);
-	assertEquals("amount not rounded", 2.00, rounded.getAmount(), 0.001);
+	assertEquals("amount not rounded", two, rounded);
   }
 
   public void testAdding() {
 	Euro sum = two.add(two);
-	assertEquals("sum", 4.00, sum.getAmount(), 0.001);
-	assertEquals("two", 2.00, two.getAmount(), 0.001);
+	assertEquals("sum", new Euro(4.00), sum);
+	assertEquals("two", new Euro(2.00), two);
+  }
+  public void testEquality(){
+	assertEquals(two, two);
+	assertEquals(two, new Euro(2.00));
+	assertEquals(new Euro(2.00), two);
+
+	assertFalse(two.equals(new Euro(7.00)));
+	assertFalse(two.equals(null));
+	assertFalse(two.equals(new Object()));
+  }
+  public void testNegativeAmount(){
+	// Guard Clause
+	try{
+	  final double NEGATIVE_AMOUNT = -2.00;
+	  new Euro(NEGATIVE_AMOUNT);
+	  // fail-Method belongs to JUnits Assert-Class
+	  fail("amount must not be negative");
+	} catch (IllegalArgumentException expected){
+  }
   }
 }

@@ -15,7 +15,7 @@ public class AllTests {
 	suite.addTestSuite(CustomerTest.class);
 	suite.addTestSuite(EuroTest.class);
 	suite.addTestSuite(MovieTest.class);
-//	suite.addTestSuite(RegularPriceTest.class);
+	suite.addTestSuite(RegularPriceTest.class);
 	return  suite;
   }
 }
